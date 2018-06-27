@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -16,7 +17,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
     <!-- Generated: 2018-03-27 13:25:03 +0200 -->
-    <title>在谈项目管理</title>
+    <title>合同项目过程跟进</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
@@ -37,7 +38,9 @@
     <script src="./assets/plugins/maps-google/plugin.js"></script>
     <!-- Input Mask Plugin -->
     <script src="./assets/plugins/input-mask/plugin.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 </head>
+
 <body class="">
 <div class="page">
     <div class="page-main">
@@ -100,13 +103,13 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="javascript:void(0)" class="nav-link active"><i class="fe fe-calendar"></i> 在谈项目</a>
+                                <a href="javascript:void(0)" class="nav-link"><i class="fe fe-calendar"></i> 在谈项目</a>
                                 <div class="nav-submenu nav">
                                     <a href="./在谈项目管理.html" class="nav-item ">项目信息</a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="javascript:void(0)" class="nav-link"><i class="fe fe-file"></i> 合同项目</a>
+                                <a href="javascript:void(0)" class="nav-link active"><i class="fe fe-file"></i> 合同项目</a>
                                 <div class="nav-submenu nav">
                                     <a href="./合同项目管理.html" class="nav-item ">项目信息</a>
                                     <a href="./login.html" class="nav-item ">项目进度</a>
@@ -144,18 +147,63 @@
         </div>
         <div class="page-content">
             <div class="container">
-                <div class="row row-cards row-deck">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header" style="display: inline-block;margin-top: 10px">
-                                <!-- 模态框（Modal） -->
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form class="card">
+
+                            <div class="card-body">
+                                <h3 class="card-title">合同项目过程跟进<button class="btn btn-cyan btn-sm" style="float:right;"
+                                                                     type="button"
+                                                                     data-toggle="modal" data-target="#newModal"><i
+                                        class="fa fa-plus"></i>添加
+                                </button></h3>
+                                <div class="row">
+                                    <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                                        <thead>
+                                        <tr>
+                                            <th>
+                                                项目名称
+                                            </th>
+                                            <th>
+                                                项目过程变更人
+                                            </th>
+                                            <th>
+                                                变更日期
+                                            </th>
+                                            <th>
+                                                跟进状态
+                                            </th>
+                                            <th>
+                                                操作
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>立体绿植项目</td>
+                                            <td>肖文汉</td>
+                                            <td>
+                                                2018-06-26
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-warning">初步对接</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>修改</button>
+                                                <button class="btn btn-danger btn-sm"><i class="fe fe-delete"></i>删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal fade" id="newModal" tabindex="-1" role="dialog"
                                      aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h4 class="modal-title" id="myModalLabel">
-                                                    在谈项目上报
+                                                    合同项目过程跟进
                                                 </h4>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                         aria-hidden="true">
@@ -163,55 +211,31 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row">
-                                                    <div class="col-md-5">
+
+                                                    <div class="col-md-7">
                                                         <div class="form-group">
-                                                            <label class="form-label">上报部门</label>
+                                                            <label class="form-label">项目状态</label>
                                                             <select class="form-control custom-select">
                                                                 <option value="">请选择</option>
-                                                                <option value="">航天航空部门</option>
-                                                                <option value="">节能环保部门</option>
+                                                                <option value="">初步对接</option>
+                                                                <option value="">重点跟踪</option>
+                                                                <option value="">框架协议签订</option>
+                                                                <option value="">中止</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary">
-                                                    提交
-                                                </button>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                                                </button>
-                                            </div>
-                                        </div><!-- /.modal-content -->
-                                    </div><!-- /.modal -->
-                                </div>
-                                <button class="btn btn-success btn-sm" style="float:right;margin-left: 5px"
-                                        type="button"
-                                        data-toggle="modal" data-target="#myModal"><i
-                                        class="fa fa-plus"></i>项目上报
-                                </button>
-                                <!-- 模态框（Modal） -->
-                                <div class="modal fade" id="contractModal" tabindex="-1" role="dialog"
-                                     aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title" id="myModalLabel">
-                                                    变更为合同项目
-                                                </h4>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-hidden="true">
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
+                                                    <div class="col-sm-6 col-md-7">
+                                                        <div class="form-group">
+                                                            <label class="form-label">项目过程变更人</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
                                                     <div class="col-md-7">
                                                         <div class="form-group">
-                                                            <label class="form-label">合同签订时间</label>
+                                                            <label class="form-label">变更日期</label>
                                                             <div class="row gutters-xs">
                                                                 <div class="col-4">
-                                                                    <select name="user[year]"
-                                                                            class="form-control custom-select">
+                                                                    <select name="user[year]" class="form-control custom-select">
                                                                         <option value="">请选择</option>
                                                                         <option value="2018">2018</option>
                                                                         <option value="2017">2017</option>
@@ -242,8 +266,7 @@
                                                                         <option value="1992">1992</option>
                                                                         <option value="1991">1991</option>
                                                                         <option value="1990">1990</option>
-                                                                        <option selected="selected" value="1989">1989
-                                                                        </option>
+                                                                        <option selected="selected" value="1989">1989</option>
                                                                         <option value="1988">1988</option>
                                                                         <option value="1987">1987</option>
                                                                         <option value="1986">1986</option>
@@ -255,16 +278,14 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-5">
-                                                                    <select name="user[month]"
-                                                                            class="form-control custom-select">
+                                                                    <select name="user[month]" class="form-control custom-select">
                                                                         <option value="">请选择</option>
                                                                         <option value="1">1月</option>
                                                                         <option value="2">2月</option>
                                                                         <option value="3">3月</option>
                                                                         <option value="4">4月</option>
                                                                         <option value="5">5月</option>
-                                                                        <option selected="selected" value="6">6月
-                                                                        </option>
+                                                                        <option selected="selected" value="6">6月</option>
                                                                         <option value="7">7月</option>
                                                                         <option value="8">8月</option>
                                                                         <option value="9">9月</option>
@@ -274,8 +295,7 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-3">
-                                                                    <select name="user[day]"
-                                                                            class="form-control custom-select">
+                                                                    <select name="user[day]" class="form-control custom-select">
                                                                         <option value="">请选择</option>
                                                                         <option value="1">1</option>
                                                                         <option value="2">2</option>
@@ -296,8 +316,7 @@
                                                                         <option value="17">17</option>
                                                                         <option value="18">18</option>
                                                                         <option value="19">19</option>
-                                                                        <option selected="selected" value="20">20
-                                                                        </option>
+                                                                        <option selected="selected" value="20">20</option>
                                                                         <option value="21">21</option>
                                                                         <option value="22">22</option>
                                                                         <option value="23">23</option>
@@ -311,23 +330,23 @@
                                                                         <option value="31">31</option>
                                                                     </select>
                                                                 </div>
+
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                     <div class="col-md-7">
                                                         <div class="form-group">
-                                                            <label class="form-label">项目来源</label>
+                                                            <label class="form-label">项目过程审核人</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-7">
+                                                        <div class="form-group">
+                                                            <label class="form-label">审核日期</label>
                                                             <div class="row gutters-xs">
-                                                                <div class="col-8">
-                                                                    <select class="form-control custom-select">
-                                                                        <option value="">请选择</option>
-                                                                        <option value="">西商大会</option>
-                                                                        <option value="">世博会</option>
-                                                                    </select>
-                                                                </div>
                                                                 <div class="col-4">
-                                                                    <select name="user[year]"
-                                                                            class="form-control custom-select">
+                                                                    <select name="user[year]" class="form-control custom-select">
                                                                         <option value="">请选择</option>
                                                                         <option value="2018">2018</option>
                                                                         <option value="2017">2017</option>
@@ -358,8 +377,7 @@
                                                                         <option value="1992">1992</option>
                                                                         <option value="1991">1991</option>
                                                                         <option value="1990">1990</option>
-                                                                        <option selected="selected" value="1989">1989
-                                                                        </option>
+                                                                        <option selected="selected" value="1989">1989</option>
                                                                         <option value="1988">1988</option>
                                                                         <option value="1987">1987</option>
                                                                         <option value="1986">1986</option>
@@ -370,20 +388,88 @@
                                                                         <option value="1981">1981</option>
                                                                     </select>
                                                                 </div>
+                                                                <div class="col-5">
+                                                                    <select name="user[month]" class="form-control custom-select">
+                                                                        <option value="">请选择</option>
+                                                                        <option value="1">1月</option>
+                                                                        <option value="2">2月</option>
+                                                                        <option value="3">3月</option>
+                                                                        <option value="4">4月</option>
+                                                                        <option value="5">5月</option>
+                                                                        <option selected="selected" value="6">6月</option>
+                                                                        <option value="7">7月</option>
+                                                                        <option value="8">8月</option>
+                                                                        <option value="9">9月</option>
+                                                                        <option value="10">10月</option>
+                                                                        <option value="11">11月</option>
+                                                                        <option value="12">12月</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <select name="user[day]" class="form-control custom-select">
+                                                                        <option value="">请选择</option>
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                        <option value="7">7</option>
+                                                                        <option value="8">8</option>
+                                                                        <option value="9">9</option>
+                                                                        <option value="10">10</option>
+                                                                        <option value="11">11</option>
+                                                                        <option value="12">12</option>
+                                                                        <option value="13">13</option>
+                                                                        <option value="14">14</option>
+                                                                        <option value="15">15</option>
+                                                                        <option value="16">16</option>
+                                                                        <option value="17">17</option>
+                                                                        <option value="18">18</option>
+                                                                        <option value="19">19</option>
+                                                                        <option selected="selected" value="20">20</option>
+                                                                        <option value="21">21</option>
+                                                                        <option value="22">22</option>
+                                                                        <option value="23">23</option>
+                                                                        <option value="24">24</option>
+                                                                        <option value="25">25</option>
+                                                                        <option value="26">26</option>
+                                                                        <option value="27">27</option>
+                                                                        <option value="28">28</option>
+                                                                        <option value="29">29</option>
+                                                                        <option value="30">30</option>
+                                                                        <option value="31">31</option>
+                                                                    </select>
+                                                                </div>
+
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="form-label">审核备注</label>
+                                                            <textarea rows="5" class="form-control" placeholder="" value=""></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-7">
                                                         <div class="form-group">
-                                                            <label class="form-label">合同文件</label>
-                                                            <input type="file">
+                                                            <label class="form-label">过程资料信息管理</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="form-label">过程备注</label>
+                                                            <textarea rows="5" class="form-control" placeholder="" value=""></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
+
                                                 <button type="button" class="btn btn-primary">
-                                                    提交审核
+                                                    提交更改
                                                 </button>
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                                                 </button>
@@ -391,142 +477,12 @@
                                         </div><!-- /.modal-content -->
                                     </div><!-- /.modal -->
                                 </div>
-                                <button class="btn btn-success btn-sm" style="float:right;margin-left: 5px"
-                                        type="button"
-                                        data-toggle="modal" data-target="#contractModal"><i
-                                        class="fa fa-plus"></i>变更为合同项目
-                                </button>
-                                <button class="btn btn-success btn-sm" style="float:right;margin-left: 5px"
-                                        onclick="javascrpit:window.location.href='在谈项目汇报.html'"><i
-                                        class="fa fa-plus"></i>进度汇报
-                                </button>
-                                <button class="btn btn-success btn-sm" style="float:right;margin-left: 5px"
-                                        onclick="javascrpit:window.location.href='在谈项目跟进.html'"><i
-                                        class="fa fa-plus"></i>进度跟进
-                                </button>
-                                <button class="btn btn-success btn-sm" style="float:right;margin-left: 5px"
-                                        onclick="javascrpit:window.location.href='在谈项目变更.html'"><i
-                                        class="fa fa-plus"></i>变更申请
-                                </button>
-                                <div class="modal fade" id="newModal" tabindex="-1" role="dialog"
-                                     aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title" id="myModalLabel">
-                                                    在谈项目领导包抓标注
-                                                </h4>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-hidden="true">
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                您确定要将此项目标注为领导包抓项目吗？
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary">
-                                                    是
-                                                </button>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">否
-                                                </button>
-                                            </div>
-                                        </div><!-- /.modal-content -->
-                                    </div><!-- /.modal -->
-                                </div>
-                                <button class="btn btn-success btn-sm" style="float:right;margin-left: 5px"
-                                        type="button"
-                                        data-toggle="modal" data-target="#newModal"><i
-                                        class="fa fa-plus"></i>领导包抓标注
-                                </button>
-                                <button class="btn btn-cyan btn-sm" style="float:right;"
-                                        onclick="javascrpit:window.location.href='在谈项目新增.html'"><i
-                                        class="fa fa-plus"></i>新增
-                                </button>
-                                <h3 class="card-title">在谈项目</h3>
-                                <br/>
-                                <div class="row gutters-xs" style="float: right;">
-                                    <div class="col" style="display: inline-flex">
-                                        <label style="width: 100px;margin-top: 8px">项目状态</label>
-                                        <select class="form-control">
-                                            <option value="">请选择</option>
-                                            <option value="">初步对接</option>
-                                            <option value="">重点跟踪</option>
-                                            <option value="">终止</option>
-                                        </select>
-                                    </div>
-                                    <span class="col-auto">
-                              <button class="btn btn-secondary" type="button"><i class="fe fe-search"></i></button>
-                            </span>
-                                </div>
-                            </div>
 
-                            <div class="table-responsive">
-                                <table class="table card-table table-vcenter text-nowrap">
-                                    <thead>
-                                    <tr>
-                                        <th class="w-1"><input type="checkbox"/></th>
-                                        <th class="w-1">项目名称</th>
-                                        <th>项目地址</th>
-                                        <th>项目类型</th>
-                                        <th>项目状态</th>
-                                        <th>是否上报</th>
-                                        <th>操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td><input type="checkbox"/></td>
-                                        <td>西安科技企业加速器建设项目</td>
-                                        <td>西户高新技术产业开发区</td>
-                                        <td>战略新兴产业</td>
-                                        <td><span class="badge badge-success">初步对接</span></td>
-                                        <td><span class="badge badge-success">已上报</span></td>
-                                        <td class="text-right">
-                                            <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>修改</button>
-                                            <button class="btn btn-danger btn-sm"><i class="fe fe-delete"></i>删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"/></td>
-                                        <td>标准化厂房及机械设备展示销售项目</td>
-                                        <td>SOHO大厦</td>
-                                        <td>装备制造类</td>
-                                        <td><span class="badge badge-danger">终止</span></td>
-                                        <td><span class="badge badge-success">未上报</span></td>
-                                        <td class="text-right">
-                                            <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>修改</button>
-                                            <button class="btn btn-danger btn-sm"><i class="fe fe-delete"></i>删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"/></td>
-                                        <td><span class="badge badge-danger">领导包抓</span>立体绿植项目</td>
-                                        <td>西安市未央区
-                                        </td>
-                                        <td>节能环保类</td>
-                                        <td><span class="badge badge-warning">重点跟踪</span></td>
-                                        <td><span class="badge badge-success">未上报</span></td>
-                                        <td class="text-right">
-                                            <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>修改</button>
-                                            <button class="btn btn-danger btn-sm"><i class="fe fe-delete"></i>删除
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <nav aria-label="Page navigation example" style="float: right;margin-right: 1.5rem">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">上一页</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">下一页</a></li>
-                                    </ul>
-                                </nav>
                             </div>
-                        </div>
+                            <div class="card-footer text-right">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -545,4 +501,5 @@
     </footer>
 </div>
 </body>
+
 </html>

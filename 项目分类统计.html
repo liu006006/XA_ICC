@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- Generated: 2018-03-27 13:25:03 +0200 -->
+    <title>项目分类统计</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+
+    <!-- echarts -->
+    <script src="./assets/js/echarts.min.js"></script>
+
+    <script src="./assets/js/require.min.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: '.'
+        });
+    </script>
+    <!-- Dashboard Core -->
+    <link href="./assets/css/dashboard.css" rel="stylesheet" />
+    <script src="./assets/js/dashboard.js"></script>
+    <!-- c3.js Charts Plugin -->
+    <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/charts-c3/plugin.js"></script>
+    <!-- Google Maps Plugin -->
+    <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/maps-google/plugin.js"></script>
+    <!-- Input Mask Plugin -->
+    <script src="./assets/plugins/input-mask/plugin.js"></script>
+</head>
+<body class="">
+<div class="page">
+    <div class="page-main">
+        <div class="header">
+            <div class="container">
+                <div class="d-flex">
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="./demo/brand/tabler.svg" class="navbar-brand-img" alt="tabler.io">
+                    </a>
+                    <div class="ml-auto d-flex order-lg-2">
+
+                        <div class="dropdown">
+                            <a href="#" class="nav-link pr-0" data-toggle="dropdown">
+                                <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
+                    <span class="ml-2 d-none d-lg-block">
+                      <span class="text-default">李响</span>
+                      <small class="text-muted d-block mt-1">管理员</small>
+                    </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="#">
+                                    <span>个人信息</span>
+                                </a>
+                                <a class="dropdown-item" href="#">退出系统</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="collapse navbar-collapse order-lg-1" id="navbarToggler">-->
+                    <!--<ul class="navbar-nav mt-2 mt-lg-0 mx-0 mx-lg-2">-->
+                    <!--<li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>-->
+                    <!--<li class="nav-item dropdown">-->
+                    <!--<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projects</a>-->
+                    <!--<div class="dropdown-menu mt-2 text-color" role="menu">-->
+                    <!--<a href="#" class="dropdown-item"><i class="dropdown-icon fa fa-tag"></i> Action </a>-->
+                    <!--<a href="#" class="dropdown-item"><i class="dropdown-icon fa fa-pencil"></i> Another action </a>-->
+                    <!--<a href="#" class="dropdown-item"><i class="dropdown-icon fa fa-reply"></i> Something else here</a>-->
+                    <!--<div class="dropdown-divider"></div>-->
+                    <!--<a href="#" class="dropdown-item"><i class="dropdown-icon fa fa-ellipsis-h"></i> Separated link</a>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <div class="header-nav d-none d-lg-flex">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link"><i class="fe fe-home"></i> 首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="nav-link"><i class="fe fe-box"></i> 储备项目</a>
+                                <div class="nav-submenu nav">
+                                    <a href="./招商载体管理.html" class="nav-item ">招商载体</a>
+                                    <a href="./merchants/list.html" class="nav-item ">客商信息</a>
+                                    <a href="./储备项目管理.html" class="nav-item ">储备项目过程</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="nav-link"><i class="fe fe-calendar"></i> 在谈项目</a>
+                                <div class="nav-submenu nav">
+                                    <a href="./在谈项目管理.html" class="nav-item ">项目信息</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="nav-link"><i class="fe fe-file"></i> 合同项目</a>
+                                <div class="nav-submenu nav">
+                                    <a href="./合同项目管理.html" class="nav-item ">项目信息</a>
+                                    <a href="./合同项目.html" class="nav-item ">项目进度</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./form-elements.html" class="nav-link"><i class="fe fe-check-square"></i> 领导抓包项目</a>
+                                <div class="nav-submenu nav">
+                                    <a href="./在谈项目.html" class="nav-item ">在谈项目</a>
+                                    <a href="./合同项目.html" class="nav-item ">合同项目</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./form-elements.html" class="nav-link"><i class="fe fe-check-square"></i> 领导包抓项目</a>
+                                <div class="nav-submenu nav">
+                                    <a href="./profile.html" class="nav-item ">项目进展</a>
+                                    <a href="./login.html" class="nav-item ">项目报告</a>
+                                    <a href="./register.html" class="nav-item ">项目资料</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./gallery.html" class="nav-link active"><i class="fe fe-image"></i> 统计报表</a>
+                                <div class="nav-submenu nav">
+                                    <a href="./项目分类统计.html" class="nav-item ">项目分类统计</a>
+                                    <a href="./五资完成情况统计.html" class="nav-item ">五资完成情况统计</a>
+                                    <!--<a href="./项目汇总统计.html" class="nav-item ">项目汇总统计</a>-->
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./docs/index.html" class="nav-link"><i class="fe fe-file-text"></i> 系统管理</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-3 ml-auto">
+                        <form class="input-icon">
+                            <input type="search" class="form-control header-search" placeholder="查询&hellip;" tabindex="1">
+                            <div class="input-icon-addon">
+                                <i class="fe fe-search"></i>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="container">
+                <div class="row row-cards row-deck">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <!--<button class="btn btn-success btn-sm" style="float:right;"  onclick="javascrpit:window.location.href='招商载体新增.html'"><i class="fa fa-plus"></i>新增</button>-->
+                                <h3 class="card-title">项目分类统计</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <div id="main" style="width: 100%;height:700px;"></div>
+                                <script type="text/javascript">
+                                    // 基于准备好的dom，初始化echarts实例
+                                    var myChart = echarts.init(document.getElementById('main'));
+
+                                    myChart.title = '各区县项目分类统计';
+
+                                    option = {
+                                        tooltip : {
+                                            trigger: 'axis',
+                                            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                                                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['装备制造类', '战略新兴产业','节能环保类']
+                                        },
+                                        grid: {
+                                            left: '3%',
+                                            right: '4%',
+                                            bottom: '3%',
+                                            containLabel: true
+                                        },
+                                        xAxis:  {
+                                            type: 'value',
+                                            name: '亿元'
+                                        },
+                                        yAxis: {
+                                            type: 'category',
+                                            data:  ['高新区','经开区','曲江新区','浐灞生态区','航空基地','航天基地','国际港务区','新城区','碑林区','莲湖区','雁塔区','未央区','灞桥区','临潼区','阎良区','长安区','高陵区','鄠邑区','周至县','蓝田县','市交通局','市水务集团','市地铁办','市建委','市市政局','市城管局','西咸新区']
+
+                                    },
+                                        series: [
+                                            {
+                                                name: '装备制造类',
+                                                type: 'bar',
+                                                stack: '总量',
+                                                label: {
+                                                    normal: {
+                                                        show: true,
+                                                        position: 'insideRight'
+                                                    }
+                                                },
+                                                data: [220, 202, 101,20, 12, 21,30, 42, 51,60, 72, 81,90, 102, 111,20, 32, 41,50, 62, 71,70, 82, 81,10, 22, 31]
+                                            },
+                                            {
+                                                name: '战略新兴产业',
+                                                type: 'bar',
+                                                stack: '总量',
+                                                label: {
+                                                    normal: {
+                                                        show: true,
+                                                        position: 'insideRight'
+                                                    }
+                                                },
+                                                data: [220, 122, 111,40, 32, 81,90, 102, 51,22, 72, 61,32, 32, 101,110, 102, 101,30, 42, 51,60, 72, 81,90, 112, 101]
+
+                                            },
+                                            {
+                                                name: '节能环保类',
+                                                type: 'bar',
+                                                stack: '总量',
+                                                label: {
+                                                    normal: {
+                                                        show: true,
+                                                        position: 'insideRight'
+                                                    }
+                                                },
+                                                data: [99, 88, 76,74, 66, 77,55, 44, 33,22, 11, 123,13, 48, 75,32, 45, 46,56, 67, 45,67, 56, 87,55, 33, 11]
+
+                                            },
+//                                            {
+//                                                name: '视频广告',
+//                                                type: 'bar',
+//                                                stack: '总量',
+//                                                label: {
+//                                                    normal: {
+//                                                        show: true,
+//                                                        position: 'insideRight'
+//                                                    }
+//                                                },
+//                                                data: [150, 212, 201, 154, 190, 330, 410]
+//                                            },
+//                                            {
+//                                                name: '搜索引擎',
+//                                                type: 'bar',
+//                                                stack: '总量',
+//                                                label: {
+//                                                    normal: {
+//                                                        show: true,
+//                                                        position: 'insideRight'
+//                                                    }
+//                                                },
+//                                                data: [820, 832, 901, 934, 1290, 1330, 1320]
+//                                            }
+                                        ]
+                                    };
+
+                                    // 使用刚指定的配置项和数据显示图表。
+                                    myChart.setOption(option);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container" style="text-align: center">
+            <div>
+                <div>
+                    Copyright © 2018 <a href=".">Hanwintch</a>. Theme by <a href="http://www.hanwininfo.com/" target="_blank">西安瀚恒信息科技有限公司</a> All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

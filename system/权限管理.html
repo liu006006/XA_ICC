@@ -13,10 +13,10 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"/>
     <!-- Generated: 2018-03-27 13:25:03 +0200 -->
-    <title>储备项目管理</title>
+    <title>系统设置-权限管理</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
@@ -27,16 +27,16 @@
         });
     </script>
     <!-- Dashboard Core -->
-    <link href="./assets/css/dashboard.css" rel="stylesheet"/>
-    <script src="./assets/js/dashboard.js"></script>
+    <link href="../assets/css/dashboard.css" rel="stylesheet"/>
+    <script src="../assets/js/dashboard.js"></script>
     <!-- c3.js Charts Plugin -->
-    <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet"/>
-    <script src="./assets/plugins/charts-c3/plugin.js"></script>
+    <link href="../assets/plugins/charts-c3/plugin.css" rel="stylesheet"/>
+    <script src="../assets/plugins/charts-c3/plugin.js"></script>
     <!-- Google Maps Plugin -->
-    <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet"/>
-    <script src="./assets/plugins/maps-google/plugin.js"></script>
+    <link href="../assets/plugins/maps-google/plugin.css" rel="stylesheet"/>
+    <script src="../assets/plugins/maps-google/plugin.js"></script>
     <!-- Input Mask Plugin -->
-    <script src="./assets/plugins/input-mask/plugin.js"></script>
+    <script src="../assets/plugins/input-mask/plugin.js"></script>
 </head>
 <body class="">
 <div class="page">
@@ -146,88 +146,55 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header" style="display: inline-block;margin-top: 10px">
-                                <button class="btn btn-success btn-sm" style="float:right;margin-left: 5px"
-                                        type="button"
-                                        data-toggle="modal" data-target="#contractModal"><i
-                                        class="fa fa-plus"></i>项目状态变更
-                                </button>
-                                <button class="btn btn-cyan btn-sm" style="float:right;"
+                                <button class="btn btn-success btn-sm" style="float:right;"
                                         onclick="javascrpit:window.location.href='储备项目新增.html'"><i
                                         class="fa fa-plus"></i>新增
                                 </button>
-                                <h3 class="card-title">储备项目</h3>
+                                <h3 class="card-title">权限管理</h3>
                             </div>
                             <div class="table-responsive">
                                 <table class="table card-table table-vcenter text-nowrap">
                                     <thead>
-                                    <tr>
-                                        <th class="w-1"><input type="checkbox"/></th>
-                                        <th class="w-1">项目名称</th>
-                                        <th>项目所属单位</th>
-                                        <th>投资总额</th>
-                                        <th>合作方式</th>
-                                        <th>项目类型</th>
-                                        <th>项目状态</th>
-                                        <th>操作</th>
-                                    </tr>
+                                     <tr>
+              <th width="10%">序号</th>
+              <th width="20%">权限名称</th>
+              <th width="10%">权限状态</th>
+              <th>备注</th>
+              <th width="15%">添加时间</th>
+              <th width="15%">操作</th>
+
+            </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <th class="w-1"><input type="checkbox"/></th>
-                                        <td>西安科技企业加速器建设项目</td>
-                                        <td>西户高新技术产业开发区</td>
+                                        <td>1</td>
+                                        <td>系统管理员</td>
                                         <td>
-                                            9.8亿
+                                            启用
                                         </td>
-                                        <td>独资、合资、合作</td>
-                                        <td>战略新兴产业</td>
-                                        <td>
-                                            启动
-                                        </td>
+                                        <td>总管理员</td>
+                                        <td>2019-02-12</td>
                                         <td class="text-right">
                                             <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>修改</button>
                                             <button class="btn btn-danger btn-sm"><i class="fe fe-delete"></i>删除
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th class="w-1"><input type="checkbox"/></th>
-                                        <td>标准化厂房及机械设备展示销售项目</td>
-                                        <td>陕西三源精密机械加工展示销售有限公司</td>
+                                  <tr>
+                                        <td>1</td>
+                                        <td>系统管理员</td>
                                         <td>
-                                            2.59亿
+                                            启用
                                         </td>
-                                        <td>合资</td>
-                                        <td>装备制造类</td>
-                                        <td>
-                                            冻结
-                                        </td>
+                                        <td>总管理员</td>
+                                        <td>2019-02-12</td>
                                         <td class="text-right">
                                             <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>修改</button>
                                             <button class="btn btn-danger btn-sm"><i class="fe fe-delete"></i>删除
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th class="w-1"><input type="checkbox"/></th>
-                                        <td>立体绿植项目</td>
-                                        <td style="width: 50px;overflow: hidden;white-space: nowrap;
-text-overflow: ellipsis;" title="新种类商品：双面立体密植草坪化的道路隔离桩及护栏，产品市场化及相关全产业链组建">新种类商品：双面立体密植草坪化的...
-                                        </td>
-                                        <td>
-                                            15亿
-                                        </td>
-                                        <td>合资、合作</td>
-                                        <td>节能环保类</td>
-                                        <td>
-                                            中止
-                                        </td>
-                                        <td class="text-right">
-                                            <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>修改</button>
-                                            <button class="btn btn-danger btn-sm"><i class="fe fe-delete"></i>删除
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    
                                     </tbody>
                                 </table>
                                 <nav aria-label="Page navigation example" style="float: right;margin-right: 1.5rem">

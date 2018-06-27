@@ -38,6 +38,7 @@
     <script src="./assets/plugins/maps-google/plugin.js"></script>
     <!-- Input Mask Plugin -->
     <script src="./assets/plugins/input-mask/plugin.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body class="">
@@ -54,7 +55,7 @@
                         <div class="dropdown">
                             <a href="#" class="nav-link pr-0" data-toggle="dropdown">
                                 <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
-                    <span class="ml-2 d-none d-lg-block">
+                                <span class="ml-2 d-none d-lg-block">
                       <span class="text-default">李响</span>
                       <small class="text-muted d-block mt-1">管理员</small>
                     </span>
@@ -116,7 +117,8 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="./form-elements.html" class="nav-link"><i class="fe fe-check-square"></i> 领导抓包项目</a>
+                                <a href="./form-elements.html" class="nav-link"><i class="fe fe-check-square"></i>
+                                    领导抓包项目</a>
                                 <div class="nav-submenu nav">
                                     <a href="./profile.html" class="nav-item ">项目进展</a>
                                     <a href="./login.html" class="nav-item ">项目报告</a>
@@ -133,7 +135,8 @@
                     </div>
                     <div class="col-3 ml-auto">
                         <form class="input-icon">
-                            <input type="search" class="form-control header-search" placeholder="查询&hellip;" tabindex="1">
+                            <input type="search" class="form-control header-search" placeholder="查询&hellip;"
+                                   tabindex="1">
                             <div class="input-icon-addon">
                                 <i class="fe fe-search"></i>
                             </div>
@@ -171,24 +174,36 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="form-label">项目所属单位</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
+                                            <select class="form-control custom-select">
+                                                <option value="">请选择</option>
+                                                <option value="">招商局</option>
+                                                <option value="">环保局</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-7">
                                         <div class="form-group">
                                             <label class="form-label">所在区域</label>
-                                            <textarea rows="5" class="form-control" placeholder="" value=""></textarea>
+                                            <select class="form-control custom-select">
+                                                <option value="">请选择</option>
+                                                <option value="">未央区</option>
+                                                <option value="">高新区</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="form-label">所属行业</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
+                                            <select class="form-control custom-select">
+                                                <option value="">请选择</option>
+                                                <option value="">零售业</option>
+                                                <option value="">高新产业</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="form-label">项目所属单位</label>
+                                            <label class="form-label">详细地址</label>
                                             <input type="text" class="form-control" placeholder="" value="">
                                         </div>
                                     </div>
@@ -401,193 +416,307 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- 模态框（Modal） -->
+                                <div class="modal fade" id="newModal" tabindex="-1" role="dialog"
+                                     aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">
+                                                    投资人添加
+                                                </h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">投资人姓名</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">联系电话</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">手机</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">邮箱</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">职务</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">责任企业</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">行业类型</label>
+                                                            <select class="form-control custom-select">
+                                                                <option value="">请选择</option>
+                                                                <option value="">军工</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">经营类型</label>
+                                                            <select class="form-control custom-select">
+                                                                <option value="">请选择</option>
+                                                                <option value="">高科技</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">所属省</label>
+                                                            <select class="form-control custom-select">
+                                                                <option value="">请选择</option>
+                                                                <option value="">陕西省</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">所属市</label>
+                                                            <select class="form-control custom-select">
+                                                                <option value="">请选择</option>
+                                                                <option value="">西安市</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">所属区</label>
+                                                            <select class="form-control custom-select">
+                                                                <option value="">请选择</option>
+                                                                <option value="">未央区</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">详细地址</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">投资意向信息</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">投资情况信息</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">企业标注</label>
+                                                            <select class="form-control custom-select">
+                                                                <option value="">请选择</option>
+                                                                <option value="">500强</option>
+                                                                <option value="">行业百强</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">备注</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">招商来源</label>
+                                                            <select class="form-control custom-select">
+                                                                <option value="">请选择</option>
+                                                                <option value="">西商大会</option>
+                                                                <option value="">世博会</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+
+                                                <button type="button" class="btn btn-primary">
+                                                    提交更改
+                                                </button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                                </button>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal -->
+                                </div>
                                 <hr/>
                                 <h4 class="card-subtitle">二、投资人信息
-                                    <button class="btn btn-success btn-sm" style="float:right;"
-                                            onclick="add(this);"><i
+                                    <button class="btn btn-cyan btn-sm" style="float:right;"
+                                            type="button"
+                                            data-toggle="modal" data-target="#newModal"><i
                                             class="fa fa-plus"></i>添加
                                     </button>
                                 </h4>
                                 <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">投资人姓名</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">联系电话</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">手机</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">邮箱</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">职务</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">责任企业</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">行业类型</label>
-                                            <select class="form-control custom-select">
-                                                <option value="">请选择</option>
-                                                <option value="">军工</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">经营类型</label>
-                                            <select class="form-control custom-select">
-                                                <option value="">请选择</option>
-                                                <option value="">高科技</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">所属省</label>
-                                            <select class="form-control custom-select">
-                                                <option value="">请选择</option>
-                                                <option value="">陕西省</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">所属市</label>
-                                            <select class="form-control custom-select">
-                                                <option value="">请选择</option>
-                                                <option value="">西安市</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">所属区</label>
-                                            <select class="form-control custom-select">
-                                                <option value="">请选择</option>
-                                                <option value="">未央区</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">详细地址</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">投资意向信息</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">投资情况信息</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">企业标注</label>
-                                            <select class="form-control custom-select">
-                                                <option value="">请选择</option>
-                                                <option value="">500强</option>
-                                                <option value="">行业百强</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">备注</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">招商来源</label>
-                                            <select class="form-control custom-select">
-                                                <option value="">请选择</option>
-                                                <option value="">西商大会</option>
-                                                <option value="">世博会</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                                        <thead>
+                                        <tr>
+                                            <th>
+                                                名称
+                                            </th>
+                                            <th>
+                                                联系人
+                                            </th>
+                                            <th>
+                                                电话
+                                            </th>
+                                            <th>
+                                                标注
+                                            </th>
+                                            <th>
+                                                操作
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>阿里巴巴</td>
+                                            <td>李辉</td>
+                                            <td>
+                                                13814826474
+                                            </td>
+                                            <td>互联网巨头</td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>修改</button>
+                                                <button class="btn btn-danger btn-sm"><i class="fe fe-delete"></i>删除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- 模态框（Modal） -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                                     aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">
+                                                    项目责任人添加
+                                                </h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="form-label">项目责任人姓名</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="form-group">
+                                                            <label class="form-label">电话</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="form-label">手机</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="form-label">所属单位</label>
+                                                            <input type="text" class="form-control" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="form-label">备注信息</label>
+                                                            <textarea rows="5" class="form-control" placeholder="" value=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
 
+                                                <button type="button" class="btn btn-primary">
+                                                    提交更改
+                                                </button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                                </button>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal -->
                                 </div>
                                 <hr/>
                                 <h4 class="card-subtitle">三、项目责任人信息
-                                    <button class="btn btn-success btn-sm" style="float:right;"
-                                            onclick="add(this);"><i
+                                    <button class="btn btn-cyan btn-sm" style="float:right;" type="button"
+                                            data-toggle="modal" data-target="#myModal"><i
                                             class="fa fa-plus"></i>添加
                                     </button>
                                 </h4>
 
                                 <div class="row">
-                                    <table>
+                                    <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
                                         <thead>
                                         <tr>
                                             <th>
                                                 项目责任人姓名
                                             </th>
+                                            <th>
+                                                电话
+                                            </th>
+                                            <th>
+                                                所属单位
+                                            </th>
+                                            <th>
+                                                操作
+                                            </th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr></tr>
-
+                                        <tr>
+                                            <td>张三</td>
+                                            <td>
+                                                13814826474
+                                            </td>
+                                            <td>
+                                                高新区招商局
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>修改</button>
+                                                <button class="btn btn-danger btn-sm"><i class="fe fe-delete"></i>删除
+                                                </button>
+                                            </td>
+                                        </tr>
                                         </tbody>
                                     </table>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">项目责任人姓名</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">电话</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">手机</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">所属单位</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-label">备注信息</label>
-                                            <textarea rows="5" class="form-control" placeholder="" value=""></textarea>
-                                        </div>
-                                    </div>
                                 </div>
                                 <hr/>
                                 <h4 class="card-subtitle">四、载体信息
@@ -670,537 +799,6 @@
                                         <div class="form-group">
                                             <label class="form-label">备注信息</label>
                                             <textarea rows="5" class="form-control" placeholder="" value=""></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr/>
-                                <h4 class="card-subtitle">五、项目过程信息
-                                </h4>
-
-                                <div class="row">
-
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">项目状态</label>
-                                            <select class="form-control custom-select">
-                                                <option value="">请选择</option>
-                                                <option value="">初步对接</option>
-                                                <option value="">重点跟踪</option>
-                                                <option value="">框架协议签订</option>
-                                                <option value="">中止</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">项目过程变更人</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">变更日期</label>
-                                            <div class="row gutters-xs">
-                                                <div class="col-4">
-                                                    <select name="user[year]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="2018">2018</option>
-                                                        <option value="2017">2017</option>
-                                                        <option value="2016">2016</option>
-                                                        <option value="2015">2015</option>
-                                                        <option value="2014">2014</option>
-                                                        <option value="2013">2013</option>
-                                                        <option value="2012">2012</option>
-                                                        <option value="2011">2011</option>
-                                                        <option value="2010">2010</option>
-                                                        <option value="2009">2009</option>
-                                                        <option value="2008">2008</option>
-                                                        <option value="2007">2007</option>
-                                                        <option value="2006">2006</option>
-                                                        <option value="2005">2005</option>
-                                                        <option value="2004">2004</option>
-                                                        <option value="2003">2003</option>
-                                                        <option value="2002">2002</option>
-                                                        <option value="2001">2001</option>
-                                                        <option value="2000">2000</option>
-                                                        <option value="1999">1999</option>
-                                                        <option value="1998">1998</option>
-                                                        <option value="1997">1997</option>
-                                                        <option value="1996">1996</option>
-                                                        <option value="1995">1995</option>
-                                                        <option value="1994">1994</option>
-                                                        <option value="1993">1993</option>
-                                                        <option value="1992">1992</option>
-                                                        <option value="1991">1991</option>
-                                                        <option value="1990">1990</option>
-                                                        <option selected="selected" value="1989">1989</option>
-                                                        <option value="1988">1988</option>
-                                                        <option value="1987">1987</option>
-                                                        <option value="1986">1986</option>
-                                                        <option value="1985">1985</option>
-                                                        <option value="1984">1984</option>
-                                                        <option value="1983">1983</option>
-                                                        <option value="1982">1982</option>
-                                                        <option value="1981">1981</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-5">
-                                                    <select name="user[month]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="1">1月</option>
-                                                        <option value="2">2月</option>
-                                                        <option value="3">3月</option>
-                                                        <option value="4">4月</option>
-                                                        <option value="5">5月</option>
-                                                        <option selected="selected" value="6">6月</option>
-                                                        <option value="7">7月</option>
-                                                        <option value="8">8月</option>
-                                                        <option value="9">9月</option>
-                                                        <option value="10">10月</option>
-                                                        <option value="11">11月</option>
-                                                        <option value="12">12月</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-3">
-                                                    <select name="user[day]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="9">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                        <option value="13">13</option>
-                                                        <option value="14">14</option>
-                                                        <option value="15">15</option>
-                                                        <option value="16">16</option>
-                                                        <option value="17">17</option>
-                                                        <option value="18">18</option>
-                                                        <option value="19">19</option>
-                                                        <option selected="selected" value="20">20</option>
-                                                        <option value="21">21</option>
-                                                        <option value="22">22</option>
-                                                        <option value="23">23</option>
-                                                        <option value="24">24</option>
-                                                        <option value="25">25</option>
-                                                        <option value="26">26</option>
-                                                        <option value="27">27</option>
-                                                        <option value="28">28</option>
-                                                        <option value="29">29</option>
-                                                        <option value="30">30</option>
-                                                        <option value="31">31</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">项目过程审核人</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">审核日期</label>
-                                            <div class="row gutters-xs">
-                                                <div class="col-4">
-                                                    <select name="user[year]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="2018">2018</option>
-                                                        <option value="2017">2017</option>
-                                                        <option value="2016">2016</option>
-                                                        <option value="2015">2015</option>
-                                                        <option value="2014">2014</option>
-                                                        <option value="2013">2013</option>
-                                                        <option value="2012">2012</option>
-                                                        <option value="2011">2011</option>
-                                                        <option value="2010">2010</option>
-                                                        <option value="2009">2009</option>
-                                                        <option value="2008">2008</option>
-                                                        <option value="2007">2007</option>
-                                                        <option value="2006">2006</option>
-                                                        <option value="2005">2005</option>
-                                                        <option value="2004">2004</option>
-                                                        <option value="2003">2003</option>
-                                                        <option value="2002">2002</option>
-                                                        <option value="2001">2001</option>
-                                                        <option value="2000">2000</option>
-                                                        <option value="1999">1999</option>
-                                                        <option value="1998">1998</option>
-                                                        <option value="1997">1997</option>
-                                                        <option value="1996">1996</option>
-                                                        <option value="1995">1995</option>
-                                                        <option value="1994">1994</option>
-                                                        <option value="1993">1993</option>
-                                                        <option value="1992">1992</option>
-                                                        <option value="1991">1991</option>
-                                                        <option value="1990">1990</option>
-                                                        <option selected="selected" value="1989">1989</option>
-                                                        <option value="1988">1988</option>
-                                                        <option value="1987">1987</option>
-                                                        <option value="1986">1986</option>
-                                                        <option value="1985">1985</option>
-                                                        <option value="1984">1984</option>
-                                                        <option value="1983">1983</option>
-                                                        <option value="1982">1982</option>
-                                                        <option value="1981">1981</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-5">
-                                                    <select name="user[month]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="1">1月</option>
-                                                        <option value="2">2月</option>
-                                                        <option value="3">3月</option>
-                                                        <option value="4">4月</option>
-                                                        <option value="5">5月</option>
-                                                        <option selected="selected" value="6">6月</option>
-                                                        <option value="7">7月</option>
-                                                        <option value="8">8月</option>
-                                                        <option value="9">9月</option>
-                                                        <option value="10">10月</option>
-                                                        <option value="11">11月</option>
-                                                        <option value="12">12月</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-3">
-                                                    <select name="user[day]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="9">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                        <option value="13">13</option>
-                                                        <option value="14">14</option>
-                                                        <option value="15">15</option>
-                                                        <option value="16">16</option>
-                                                        <option value="17">17</option>
-                                                        <option value="18">18</option>
-                                                        <option value="19">19</option>
-                                                        <option selected="selected" value="20">20</option>
-                                                        <option value="21">21</option>
-                                                        <option value="22">22</option>
-                                                        <option value="23">23</option>
-                                                        <option value="24">24</option>
-                                                        <option value="25">25</option>
-                                                        <option value="26">26</option>
-                                                        <option value="27">27</option>
-                                                        <option value="28">28</option>
-                                                        <option value="29">29</option>
-                                                        <option value="30">30</option>
-                                                        <option value="31">31</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-label">审核备注</label>
-                                            <textarea rows="5" class="form-control" placeholder="" value=""></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">过程资料信息管理</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-label">过程备注</label>
-                                            <textarea rows="5" class="form-control" placeholder="" value=""></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr/>
-                                <h4 class="card-subtitle">六、项目变更信息
-                                </h4>
-
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">项目所属部门</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">项目主要内容</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">项目计划</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">变更日期</label>
-
-                                            <div class="row gutters-xs">
-                                                <div class="col-4">
-                                                    <select name="user[year]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="2018">2018</option>
-                                                        <option value="2017">2017</option>
-                                                        <option value="2016">2016</option>
-                                                        <option value="2015">2015</option>
-                                                        <option value="2014">2014</option>
-                                                        <option value="2013">2013</option>
-                                                        <option value="2012">2012</option>
-                                                        <option value="2011">2011</option>
-                                                        <option value="2010">2010</option>
-                                                        <option value="2009">2009</option>
-                                                        <option value="2008">2008</option>
-                                                        <option value="2007">2007</option>
-                                                        <option value="2006">2006</option>
-                                                        <option value="2005">2005</option>
-                                                        <option value="2004">2004</option>
-                                                        <option value="2003">2003</option>
-                                                        <option value="2002">2002</option>
-                                                        <option value="2001">2001</option>
-                                                        <option value="2000">2000</option>
-                                                        <option value="1999">1999</option>
-                                                        <option value="1998">1998</option>
-                                                        <option value="1997">1997</option>
-                                                        <option value="1996">1996</option>
-                                                        <option value="1995">1995</option>
-                                                        <option value="1994">1994</option>
-                                                        <option value="1993">1993</option>
-                                                        <option value="1992">1992</option>
-                                                        <option value="1991">1991</option>
-                                                        <option value="1990">1990</option>
-                                                        <option selected="selected" value="1989">1989</option>
-                                                        <option value="1988">1988</option>
-                                                        <option value="1987">1987</option>
-                                                        <option value="1986">1986</option>
-                                                        <option value="1985">1985</option>
-                                                        <option value="1984">1984</option>
-                                                        <option value="1983">1983</option>
-                                                        <option value="1982">1982</option>
-                                                        <option value="1981">1981</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-5">
-                                                    <select name="user[month]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="1">1月</option>
-                                                        <option value="2">2月</option>
-                                                        <option value="3">3月</option>
-                                                        <option value="4">4月</option>
-                                                        <option value="5">5月</option>
-                                                        <option selected="selected" value="6">6月</option>
-                                                        <option value="7">7月</option>
-                                                        <option value="8">8月</option>
-                                                        <option value="9">9月</option>
-                                                        <option value="10">10月</option>
-                                                        <option value="11">11月</option>
-                                                        <option value="12">12月</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-3">
-                                                    <select name="user[day]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="9">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                        <option value="13">13</option>
-                                                        <option value="14">14</option>
-                                                        <option value="15">15</option>
-                                                        <option value="16">16</option>
-                                                        <option value="17">17</option>
-                                                        <option value="18">18</option>
-                                                        <option value="19">19</option>
-                                                        <option selected="selected" value="20">20</option>
-                                                        <option value="21">21</option>
-                                                        <option value="22">22</option>
-                                                        <option value="23">23</option>
-                                                        <option value="24">24</option>
-                                                        <option value="25">25</option>
-                                                        <option value="26">26</option>
-                                                        <option value="27">27</option>
-                                                        <option value="28">28</option>
-                                                        <option value="29">29</option>
-                                                        <option value="30">30</option>
-                                                        <option value="31">31</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">变更说明</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-label">变更资料上传</label>
-                                            <input type="file">
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr/>
-                                <h4 class="card-subtitle">七、项目进度汇报信息
-                                </h4>
-
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label class="form-label">项目进度情况说明</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label class="form-label">汇报日期</label>
-                                            <div class="row gutters-xs">
-                                                <div class="col-4">
-                                                    <select name="user[year]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="2018">2018</option>
-                                                        <option value="2017">2017</option>
-                                                        <option value="2016">2016</option>
-                                                        <option value="2015">2015</option>
-                                                        <option value="2014">2014</option>
-                                                        <option value="2013">2013</option>
-                                                        <option value="2012">2012</option>
-                                                        <option value="2011">2011</option>
-                                                        <option value="2010">2010</option>
-                                                        <option value="2009">2009</option>
-                                                        <option value="2008">2008</option>
-                                                        <option value="2007">2007</option>
-                                                        <option value="2006">2006</option>
-                                                        <option value="2005">2005</option>
-                                                        <option value="2004">2004</option>
-                                                        <option value="2003">2003</option>
-                                                        <option value="2002">2002</option>
-                                                        <option value="2001">2001</option>
-                                                        <option value="2000">2000</option>
-                                                        <option value="1999">1999</option>
-                                                        <option value="1998">1998</option>
-                                                        <option value="1997">1997</option>
-                                                        <option value="1996">1996</option>
-                                                        <option value="1995">1995</option>
-                                                        <option value="1994">1994</option>
-                                                        <option value="1993">1993</option>
-                                                        <option value="1992">1992</option>
-                                                        <option value="1991">1991</option>
-                                                        <option value="1990">1990</option>
-                                                        <option selected="selected" value="1989">1989</option>
-                                                        <option value="1988">1988</option>
-                                                        <option value="1987">1987</option>
-                                                        <option value="1986">1986</option>
-                                                        <option value="1985">1985</option>
-                                                        <option value="1984">1984</option>
-                                                        <option value="1983">1983</option>
-                                                        <option value="1982">1982</option>
-                                                        <option value="1981">1981</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-5">
-                                                    <select name="user[month]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="1">1月</option>
-                                                        <option value="2">2月</option>
-                                                        <option value="3">3月</option>
-                                                        <option value="4">4月</option>
-                                                        <option value="5">5月</option>
-                                                        <option selected="selected" value="6">6月</option>
-                                                        <option value="7">7月</option>
-                                                        <option value="8">8月</option>
-                                                        <option value="9">9月</option>
-                                                        <option value="10">10月</option>
-                                                        <option value="11">11月</option>
-                                                        <option value="12">12月</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-3">
-                                                    <select name="user[day]" class="form-control custom-select">
-                                                        <option value="">请选择</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="9">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                        <option value="13">13</option>
-                                                        <option value="14">14</option>
-                                                        <option value="15">15</option>
-                                                        <option value="16">16</option>
-                                                        <option value="17">17</option>
-                                                        <option value="18">18</option>
-                                                        <option value="19">19</option>
-                                                        <option selected="selected" value="20">20</option>
-                                                        <option value="21">21</option>
-                                                        <option value="22">22</option>
-                                                        <option value="23">23</option>
-                                                        <option value="24">24</option>
-                                                        <option value="25">25</option>
-                                                        <option value="26">26</option>
-                                                        <option value="27">27</option>
-                                                        <option value="28">28</option>
-                                                        <option value="29">29</option>
-                                                        <option value="30">30</option>
-                                                        <option value="31">31</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="form-label">汇报人</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-label">资料上传</label>
-                                            <input type="file">
                                         </div>
                                     </div>
                                 </div>
